@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   const { t } = useTranslation('privacy');
 
   return (
-    <div className="relative py-20 px-6 bg-gradient-to-r from-green-100 via-green-50 to-white rounded-lg shadow-lg mt-10">
+    <div className="relative py-20 px-6 bg-gradient-to-r from-teal-50 via-white to-teal-100 rounded-lg shadow-lg mt-10">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8 space-y-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">
