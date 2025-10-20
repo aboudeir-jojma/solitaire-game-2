@@ -4,6 +4,7 @@ import "../globals.css";
 import I18nProvider from "../components/I18nProvider";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,11 +19,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Solitaire Games",
   description: "Solitaire Games – Play online for free",
-  keywords: ["spider solitaire", "solitaire games","solitaire klondike", "online card games", "herder cripter","solitaire 247 games","Solitaire Klondikeclassic","Solitaire Klondike2 suits","Solitaire Klondike4 suits","Solitaire Klondikeeasy","Solitaire Klondikehard","solitaire games free","free online card games","free solitaire games","play solitaire online","best solitaire games","solitaire card games","solitaire spider","Solitaire Klondikefree","Solitaire Klondikedownload","Solitaire Klondikeapp","Solitaire Klondikegame","Solitaire Klondikeonline free","Solitaire Klondikeclassic free","Solitaire Klondike2 suits free","Solitaire Klondike4 suits free","Solitaire Klondikeeasy free","Solitaire Klondikehard free","247 spider solitaire","Solitaire Klondike247","solitaire 247","solitaire 247 free","solitaire 247 games free","free solitaire 247","free Solitaire Klondike247"],
+  keywords: [
+    "spider solitaire", "solitaire games", "solitaire klondike", "online card games", "herder cripter",
+    "solitaire 247 games", "Solitaire Klondikeclassic", "Solitaire Klondike2 suits",
+    "Solitaire Klondike4 suits", "Solitaire Klondikeeasy", "Solitaire Klondikehard",
+    "solitaire games free", "free online card games", "free solitaire games", "play solitaire online",
+    "best solitaire games", "solitaire card games", "solitaire spider", "Solitaire Klondikefree",
+    "Solitaire Klondikedownload", "Solitaire Klondikeapp", "Solitaire Klondikegame",
+    "Solitaire Klondikeonline free", "Solitaire Klondikeclassic free", "Solitaire Klondike2 suits free",
+    "Solitaire Klondike4 suits free", "Solitaire Klondikeeasy free", "Solitaire Klondikehard free",
+    "247 spider solitaire", "Solitaire Klondike247", "solitaire 247", "solitaire 247 free",
+    "solitaire 247 games free", "free solitaire 247", "free Solitaire Klondike247"
+  ],
 };
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'fr' }];
+  return [{ locale: "en" }, { locale: "fr" }];
 }
 
 export const dynamicParams = false;
@@ -38,14 +50,28 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GZVZZ88VYB"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GZVZZ88VYB');
+          `}
+        </Script>
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <I18nProvider locale={locale}>
           <Navigation />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </I18nProvider>
       </body>
