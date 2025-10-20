@@ -11,7 +11,7 @@ export default function HomeClient() {
 
   return (
     <main className="flex flex-col min-h-screen w-full bg-gray-100">
-      {/* === SECTION 1: Jeu principal === */}
+      {/* === SECTION 1: Jeu principal ======= */}
       <div className="relative py-20 px-6 bg-gradient-to-r from-teal-50 via-white to-teal-100 rounded-lg shadow-lg">
         <section className="flex-1 flex justify-center mt-6">
           <iframe
