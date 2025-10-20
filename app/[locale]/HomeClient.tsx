@@ -3,21 +3,55 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { useRef, useState } from "react";
 
 export default function HomeClient() {
   const { t } = useTranslation("global");
   const params = useParams();
   const activeLocale = typeof params?.locale === "string" ? params.locale : "en";
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      iframeRef.current?.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  };
 
   return (
     <main className="flex flex-col min-h-screen w-full bg-gray-100">
       {/* === SECTION 1: Jeu principal ======= */}
       <div className="relative py-20 px-6 bg-gradient-to-r from-teal-50 via-white to-teal-100 rounded-lg shadow-lg">
-        <section className="flex-1 flex justify-center mt-6">
+        <section className="flex-1 flex justify-center mt-6 relative">
           <iframe
+            ref={iframeRef}
             src="/game/index.html"
             className="w-full max-w-5xl h-[85vh] border-0 shadow-lg rounded-lg"
           ></iframe>
+          <button
+            onClick={toggleFullscreen}
+            className="absolute top-4 right-80 bg-teal-700 text-white p-2 rounded-full shadow-lg hover:bg-teal-800 transition-colors z-10"
+            title="Toggle Fullscreen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+              />
+            </svg>
+          </button>
         </section>
       </div>
 
