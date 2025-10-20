@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <Link href={`/${activeLocale}`}>
-              <img src="/logo.png" alt="Logo" className="h-15 w-auto object-contain" />
+              <img src="/logo.png" alt="Logo" className="h-10 w-auto object-contain" />
             </Link>
           </div>
 
