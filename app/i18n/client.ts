@@ -23,13 +23,13 @@ if (typeof window !== "undefined") {
             en: {
               global: require("../../lib/locales/en/global.js").default,
               about: require("../../lib/locales/en/global.js").default.about,
-              privacy: require("../../lib/locales/en/global.js").default.privacy,
+              privacy: require("../../lib/locales/en/privacy.js").default,
               terms: require("../../lib/locales/en/global.js").default.terms,
             },
             fr: {
               global: require("../../lib/locales/fr/global.js").default,
               about: require("../../lib/locales/fr/global.js").default.about,
-              privacy: require("../../lib/locales/fr/global.js").default.privacy,
+              privacy: require("../../lib/locales/fr/privacy.js").default,
               terms: require("../../lib/locales/fr/global.js").default.terms,
             },
           },

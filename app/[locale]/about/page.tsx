@@ -6,7 +6,7 @@ export default function AboutPage() {
   const { t } = useTranslation('about');
 
   return (
-    <div className="relative py-20 px-6 bg-gradient-to-r from-green-100 via-green-50 to-white rounded-lg shadow-lg mt-10">
+    <div className="relative py-20 px-6 bg-gradient-to-r from-yellow-100 via-yellow-50 to-white rounded-lg shadow-lg mt-10">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8 space-y-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">
@@ -22,9 +22,9 @@ export default function AboutPage() {
           </div>
 
           {/* Section 2 */}
-          <div className="bg-green-50 p-6 rounded-lg">
-            <h3 className="text-2xl font-semibold text-green-800 mb-3">{t('sections.section2.title')}</h3>
-            <p className="text-green-700">
+          <div className="bg-yellow-50 p-6 rounded-lg">
+            <h3 className="text-2xl font-semibold text-yellow-800 mb-3">{t('sections.section2.title')}</h3>
+            <p className="text-yellow-700">
               {t('sections.section2.content')}
             </p>
           </div>

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://247solitairegames.com
+Host: https://solitairegameplay.com
 
 # Sitemaps
-Sitemap: https://247solitairegames.com/sitemap.xml
+Sitemap: https://solitairegameplay.com/sitemap.xml

@@ -47,7 +47,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-white text-gray-900">
+      <body className="antialiased min-h-screen flex flex-col bg-yellow-50 text-yellow-900">
         <LocaleRedirect />
         {children}
       </body>
