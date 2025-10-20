@@ -68,7 +68,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex items-center gap-3 ml-18">
             <Link href={`/${activeLocale}`} onClick={closeMenu} className="flex items-center">
-              <img src="/logo.png" alt="Logo"  className="h-12 sm:h-13 md:h-14  w-auto max-w-[300px] object-contain" />
+              <img src="/logo.png" alt="Logo"  className="h-15 sm:h-13 md:h-14  w-auto max-w-[500px] object-contain" />
             </Link>
           </div>
 
