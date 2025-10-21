@@ -34,7 +34,7 @@ export default function HomeClient() {
           ></iframe>
           <button
             onClick={toggleFullscreen}
-            className="absolute top-4 right-60 bg-teal-700 text-white p-2 rounded-full shadow-lg hover:bg-teal-800 transition-colors z-10"
+            className="absolute top-4 right-4 md:right-80 bg-teal-700 text-white p-2 rounded-full shadow-lg hover:bg-teal-800 transition-colors z-10"
             title="Toggle Fullscreen"
           >
             <svg
